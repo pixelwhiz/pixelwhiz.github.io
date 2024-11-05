@@ -230,7 +230,7 @@ const App: React.FC = () => {
             </Card>
         )}
 
-        <Box id={"content"} className={`h-screen flex md:items-center md:justify-center fixed sm:relative transition-all duration-200 ease-in-out transform ${isMenuOpen ? "lg:left-64 xl:left-36 sm:left-72 left-64" : "left-0"}`}>
+        <Box className={`h-screen flex md:items-center md:justify-center absolute sm:relative transition-all duration-200 ease-in-out transform ${isMenuOpen ? "lg:left-64 xl:left-36 sm:left-72 left-64" : "left-0"}`}>
           <Grid className={"grid md:justify-center md:items-center"}>
 
             <Box className={`w-full pt-0 top-0 md:top-0`}
@@ -247,7 +247,7 @@ const App: React.FC = () => {
                     </Button>
                   </Box>
                   <Box className="flex gap-2.5">
-                    <Button variant="outline" onClick={() => setIsMenuOpen(!isMenuOpen)} className={"flex gap-2"}>
+                    <Button variant="outline" onClick={routeToGithub} className={"flex gap-2"}>
                       <FaGithub />
                       Github
                     </Button>
