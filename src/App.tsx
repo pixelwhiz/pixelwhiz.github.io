@@ -319,7 +319,7 @@ const App: React.FC = () => {
                 </Box>
 
                 {/* Header2 */}
-                <Box className="flex w-full justify-between sm:translate-y-0 translate-y-2.5 z-10 md:flex hidden">
+                <Box className="flex py-1 w-full justify-between sm:translate-y-0 translate-y-2.5 z-10 md:flex hidden">
                   <Box className="flex gap-2.5">
                     <Button variant="solid" onClick={routeToProjects} className={"flex gap-2"}>
                       <FaServer />
