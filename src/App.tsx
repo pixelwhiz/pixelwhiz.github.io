@@ -75,15 +75,22 @@ const App: React.FC = () => {
         setStatus("Online");
       }
 
-      const status = response.data.data.activities[0].name;
+      const activities = response.data.data.activities;
 
-      if (status === "Spotify" || "YouTube Music") {
-        setActivity("Listening to");
+      if (activities.length > 0) {
+        const lastActivity = activities[activities.length - 1].name;
+
+        if (lastActivity === "Spotify" || lastActivity === "YouTube Music") {
+          setActivity("Listening to");
+        } else {
+          setActivity("Playing");
+        }
+
+        setPlayingStatus(lastActivity);
       } else {
-        setActivity("Playing");
+        setActivity("No activity is going on");
+        setPlayingStatus("None");
       }
-
-      setPlayingStatus(response.data.data.activities[0].name);
     } catch (err) {
       console.log("Internal Server Error: ", err);
     } finally {
