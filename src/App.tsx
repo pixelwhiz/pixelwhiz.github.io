@@ -87,9 +87,6 @@ const App: React.FC = () => {
         }
 
         setPlayingStatus(lastActivity);
-      } else {
-        setActivity("No activity is going on");
-        setPlayingStatus("None");
       }
     } catch (err) {
       console.log("Internal Server Error: ", err);
