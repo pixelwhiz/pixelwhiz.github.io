@@ -53,7 +53,7 @@ const App: React.FC = () => {
 
     try {
       setIsFetchingLanyard(true);
-      const response = await axios.get("https://api.lanyard.rest/v1/users/591983759965028363");
+      const response = await axios.get("");
       const discordStatus = response.data.data.discord_status;
       // Check the Discord status and update the className accordingly
       if (discordStatus === "offline") {
@@ -100,7 +100,7 @@ const App: React.FC = () => {
   const fetchLastCommit = async () => {
     try {
       setIsFetchingLastCommit(true);
-      const response = await axios.get("https://api.github.com/users/pixelwhiz/events/public");
+      const response = await axios.get("");
       if (response.data[0].repo.url !== "") {
         console.log(response.data[0].repo.url)
         const responseLastCommit = await axios.get(response.data[0].repo.url);
